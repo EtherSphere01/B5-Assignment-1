@@ -22,7 +22,7 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 
 class Vehicle {
   private make: string;
-  public year: number;
+  private year: number;
 
   constructor(make: string, year: number) {
     this.make = make;
