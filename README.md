@@ -1,10 +1,10 @@
 # Blog Task
 
-### 1 -> What are some difference between interface and types in TypeScripts
+## 1. What are some difference between interface and types in TypeScripts
 
 ---
 
-**-Syntax-**
+## 1. 🔤 Syntax
 
 Interface uses `interface` keyword :
 
@@ -26,7 +26,7 @@ type MyType = {
 };
 ```
 
-**Extending Property**
+## 2. 📚 Extending Properties
 
 Interface uses the `extends` keyword :
 
@@ -42,7 +42,7 @@ Type uses `intersections (&)` :
 type TUser = MyType & { role: string };
 ```
 
-**Primitives, Unions and Tuples(only with `type`)**
+## 3. 🔗 Unions, Tuples, and Function Types (only with `type`)
 
 Interface can't define `primitives`, `unions` or `tuples` but Type can
 
@@ -54,7 +54,7 @@ type ClickMe = () => void; // Function
 //interface password = String | number; // not possible
 ```
 
-**Declaration Merging (only with `interfaces`)**
+## 4. 🧬 Declaration Merging (only with `interfaces`)
 
 ```ts
 interface Home {
@@ -75,7 +75,7 @@ interface Home {
 // `type` declarations can't be merged this way
 ```
 
-**Class implementation**
+## 5. 🏗️ Class Implementation
 
 Both `type` and `interface` can be used to define class :
 
