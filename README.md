@@ -1,5 +1,7 @@
 # Blog Task
 
+---
+
 ## 1. What are some difference between `interface` and `types` in TypeScripts
 
 ---
@@ -101,6 +103,8 @@ class Babul implements TStudent {
 }
 ```
 
+---
+
 ## 2. what is the use of the `keyof` keyword in TypeScript?
 
 ---
@@ -150,6 +154,8 @@ const carYear = getProperty(myVehicle, "year"); // 2020
 //   const carName2 = getProperty(myVehicle, "name2"); // ❌ Error: Argument of type '"name2"' is not assignable to parameter of type '"name" | "model" | "year"'.
 ```
 
+---
+
 ## 3. Explain the difference between `any`, `unknown` and `never` types in TypeScript
 
 ---
@@ -190,5 +196,6 @@ function loop(): never {
   while (true) {}
 }
 
-
 ```
+
+---
