@@ -51,7 +51,7 @@ type password = string | number; // Union
 type Value = [number, number]; // Tuple
 type ClickMe = () => void; // Function
 
-//interface password = String | number; // not possible
+//interface password = String | number; // ❌ Not allowed
 ```
 
 ## 4. 🧬 Declaration Merging (only with `interfaces`)
@@ -99,4 +99,53 @@ class Babul implements TStudent {
   name = "Babul";
   id = "22-3432-2";
 }
+```
+
+## 2. what is the use of the `keyof` keyword in TypeScript?
+
+---
+
+## 🔑 What is `keyof` ?
+
+`keyof` keyword in TypeScript is used to create a union type of all the property name of a given object type.
+
+## 🧠 Why use `keyof`
+
+- To get the property(key) of a type as a union of string literal types.
+- To create a dynamic and type-safe function (most use in generic function).
+- To improve code readability, autocompletion, require less code and reduce runtime errors.
+
+## 🔍 Syntax
+
+```ts
+type Person = keyof TypeName;
+
+// Example
+
+type Vehicle = {
+  name: string;
+  model: string;
+  year: number;
+};
+
+type Car = keyof Vehicle;
+
+const myCar: Car = "name"; // ✅ Valid
+// const myCar : Car = "modified" // ❌ Error: Invalid
+
+//Use in Generic
+function getProperty<T, P extends keyof T>(object: T, property: P): T[P] {
+  return object[property];
+}
+
+const myVehicle: Vehicle = {
+  name: "Toyota",
+  model: "Corolla",
+  year: 2020,
+};
+
+const carName = getProperty(myVehicle, "name"); // "Toyota"
+const carModel = getProperty(myVehicle, "model"); // "Corolla"
+const carYear = getProperty(myVehicle, "year"); // 2020
+//   const carName2 = getProperty(myVehicle, "name2"); // ❌ Error: Argument of type '"name2"' is not assignable to parameter of type '"name" | "model" | "year"'.
 ```
