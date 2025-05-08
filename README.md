@@ -4,7 +4,7 @@
 
 ---
 
-**Syntax**
+**-Syntax-**
 
 Interface uses `interface` keyword :
 
