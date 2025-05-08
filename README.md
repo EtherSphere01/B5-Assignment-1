@@ -1,1 +1,6 @@
-"# B5-Assignment-1" 
+#Blog Task
+
+# 1 -> What are some difference between interface and types in TypeScripts
+
+**Syntax**
+
