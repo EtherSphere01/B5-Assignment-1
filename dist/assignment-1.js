@@ -1,3 +1,12 @@
 "use strict";
-const s = "Hello, world!";
-console.log(s);
+function formatString(input, toUpper) {
+    if (toUpper) {
+        return input.toUpperCase();
+    }
+    else {
+        return input;
+    }
+}
+formatString("Hello");
+formatString("Hello", true);
+formatString("Hello", false);
