@@ -1,6 +1,6 @@
 # Blog Task
 
-## 1. What are some difference between interface and types in TypeScripts
+## 1. What are some difference between `interface` and `types` in TypeScripts
 
 ---
 
@@ -148,4 +148,47 @@ const carName = getProperty(myVehicle, "name"); // "Toyota"
 const carModel = getProperty(myVehicle, "model"); // "Corolla"
 const carYear = getProperty(myVehicle, "year"); // 2020
 //   const carName2 = getProperty(myVehicle, "name2"); // ❌ Error: Argument of type '"name2"' is not assignable to parameter of type '"name" | "model" | "year"'.
+```
+
+## 3. Explain the difference between `any`, `unknown` and `never` types in TypeScript
+
+---
+
+## any
+
+- The any type is used for skip the type checking in TypeScript. You can assign any type of data if you give `any` as a type, but you will loss the type safety.
+
+```ts
+let anything: any;
+anything = 10;
+anything = "hello";
+anything.toFixed(2); // This will not throw an error at compile time, but will throw and error at runtime if value is not a number
+```
+
+## unknown
+
+- It is similar like `any` but a safer alternative of `any`. The type should be checked before use any property of a specific type. Otherwise it will cause an error in compile time;
+
+```ts
+let value: unknown;
+value = 10;
+value = "hello";
+
+//❌ value.toFixed(2); This will cause a TypeScript error because `value` is of type `unknown`
+
+if (typeof value === "number") {
+  console.log(value.toFixed(2));
+}
+```
+
+## never
+
+- This `never` type is used to signal unreachable code path or in a function that never return or throws an error. 
+
+```ts
+function loop(): never {
+  while (true) {}
+}
+
+
 ```
